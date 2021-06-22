@@ -1,5 +1,5 @@
 {
-  "name": "battleship",
+  "name": "secretHGame",
   "version": "1.0.0",
   "description": "Multiplayer BattleShip Game",
   "main": "server.js",

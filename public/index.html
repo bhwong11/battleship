@@ -5,70 +5,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battleship</title>
+    <title>Secret Fascist</title>
+    <!-- CSS only
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
+
 </head>
 
 <body>
-    <button id="singlePlayerButton">Single Player</button>
-    <button id="multiPlayerButton">Multi Player</button>
-
-    <div class="player p1">
-        Player 1
-        <div class="connected">Connected<span></span></div>
-        <div class="ready">Ready <span></span></div>
+    <div id='policiesEnactedF'>
+        <div class='boardCard pCardBoard0'></div>
+        <div class='boardCard pCardBoard1'></div>
+        <div class='boardCard pCardBoard2'></div>
+        <div class='boardCard pCardBoard3'></div>
+        <div class='boardCard pCardBoard4'></div>
+        <div class='boardCard pCardBoard5'></div>
     </div>
-    <div class="player p2">
-        Player 2
-        <div class="connected">Connected<span></span></div>
-        <div class="ready">Ready <span></span></div>
+    <div id='policiesEnactedL'>
+        <div class='boardCard pCardBoard0'></div>
+        <div class='boardCard pCardBoard1'></div>
+        <div class='boardCard pCardBoard2'></div>
+        <div class='boardCard pCardBoard3'></div>
+        <div class='boardCard pCardBoard4'></div>
     </div>
+    <div id="electionTracker">
+        <div class='electionTrackerDiv eTracker1'></div>
+        <div class='electionTrackerDiv eTracker2'></div>
+        <div class='electionTrackerDiv eTracker3'></div>
+    </div>
+    <div id='startAndReady'>
+        <h5>Enter Your Information To Get Started</h5>
+        <button id="startButton">Connect To Server</button>
+        <form id="playerNameForm">
+            <label for="playerName">enter player name</label>
+            <input type="text" id="playerName" name="playerName">
+            <button id="readyButton">Ready To Play</button>
+        </form>
+    </div>
+    <button id="nextTurn" class="noDisplay">Next Turn</button>
+
+    <div id="userInfo">
+        <div id="gameOptions">
+
+            <div id="playersTurn" class="noDisplay">
+
+            </div>
 
 
-    <div class="container">
-        <div class="grid grid-user">
+            <div id='players' class='noDisplay'>
+
+            </div>
+            <div id="yesNoButtons" class="noDisplay">
+                <h4>Should the Government be Accepted?</h4>
+                <button id="yesChanellor">Yes</button>
+                <button id="noChanellor">No</button>
+            </div>
+            <div id="pCardDivTitle" class="noDisplay"><b>Select Cards to Send To the Chancellor</b></div>
+            <div id="pCardsDiv" class="noDisplay">
+
+            </div>
+            <div id="pCardChancellorDivTitle" class="noDisplay"><b>Select Policy Card To Enact</b></div>
+            <div id="pCardsDivChancellor" class="noDisplay">
+
+            </div>
+
+            <div id="playerForInvestigationTitle" class="noDisplay"><b>Select Player to invesigate</b></div>
+            <div id="playerForInvestigation" class="noDisplay">
+
+            </div>
+
+            <div id="playerForSpecialElectionTitle" class="noDisplay"><b>Select a Player To Be President</b></div>
+            <div id="playerForNewPresident" class="noDisplay">
+
+            </div>
+
+            <div id="playerForKillTitle" class="noDisplay"><b>Select a Player to Execute</b></div>
+            <div id="playerForKill" class="noDisplay">
+
+            </div>
+            <div id="presidentVeto" class="noDisplay">
+                <div><b>Do You Wish To Veto These Cards?</b></div>
+                <button id="yesVetoP">Yes</button>
+                <button id="noVetoP">No</button>
+            </div>
+            <div id="chancellorVeto" class="noDisplay">
+                <div><b>Do You Wish To Veto These Cards?</b></div>
+                <button id="yesVetoC">Yes</button>
+                <button id="noVetoC">No</button>
+            </div>
+
+
         </div>
-        <div class="grid grid-computer"></div>
+
+        <div id="staticPieces">
+
+
+            <div id="gameAnnouncementsDiv" class="noDisplay">
+                <h5 id="gameAnnouncementsTitle">Game announcements</h5>
+                <div id="gameAnnouncements">
+                    <div id="infoDiv">
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="playerSelfInfoPlusTitle" class="noDisplay">
+                <h5 id="playerSelfInfoTitle">
+                    Your Information
+                </h5>
+                <div id='playerSelfInfo'>
+                    <div id="playerNameInBoard">
+
+
+                    </div>
+                    <div id="playerCard">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="hidden-info">
-        <button id="start">Start Game</button>
-        <button id="rotate">Rotate Ships</button>
-        <h3 id="whose-go">Your Go</h3>
-        <h3 id="info"></h3>
-    </div>
-
-    <div class="grid-display">
-        <div class="ship destroyer-container" draggable="true">
-            <div id="destroyer-0"></div>
-            <div id="destroyer-1"></div>
-        </div>
-        <div class="ship submarine-container" draggable="true">
-            <div id="submarine-0"></div>
-            <div id="submarine-1"></div>
-            <div id="submarine-2"></div>
-        </div>
-        <div class="ship cruiser-container" draggable="true">
-            <div id="cruiser-0"></div>
-            <div id="cruiser-1"></div>
-            <div id="cruiser-2"></div>
-        </div>
-        <div class="ship battleship-container" draggable="true">
-            <div id="battleship-0"></div>
-            <div id="battleship-1"></div>
-            <div id="battleship-2"></div>
-            <div id="battleship-3"></div>
-        </div>
-        <div class="ship carrier-container" draggable="true">
-            <div id="carrier-0"></div>
-            <div id="carrier-1"></div>
-            <div id="carrier-2"></div>
-            <div id="carrier-3"></div>
-            <div id="carrier-4"></div>
-        </div>
-    </div>
 
 </body>
 

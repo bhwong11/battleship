@@ -1,155 +1,138 @@
-.container{
-    display: flex;
+.noDisplay{
+    display: none;
 }
-
-.grid-user{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: blue;
-    margin: 20px;
-}
-
-.grid div{
-    width: 40px;
-    height: 40px;
-}
-
-.grid-computer{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: lightgreen;
-    margin: 20px;
-}
-
-.grid-display{
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    background-color: yellow;
-}
-.destroyer-container{
+.blueCard{
+    background-color: aqua;
+    border: 2px solid black;
+    height: 100px;
     width: 80px;
-    height: 40px;
+}
+.orangeCard{
     background-color: orange;
-    margin: 10px;
+    border: 2px solid black;
+    height: 100px;
+    width: 80px;
+}
+#pCardsDiv{
     display: flex;
 }
-
-.destroyer-container-vertical{
-    width: 40px;
-    height: 80px;
-    background-color: orange;
-    margin: 10px;
+#pCardsDivChancellor{
     display: flex;
-    flex-wrap: wrap;
 }
-.submarine-container{
-    width: 120px;
+.selected{
+    background-color: gray;
+}
+#policiesEnactedF{
+    display: flex;
+    margin: 1em;
+}
+#policiesEnactedL{
+    display: flex;
+    margin: 1em;
+}
+.boardCard{
+    border: 2px solid black;
+    height: 100px;
+    width: 80px;
+}
+#electionTracker{
+    margin: 1em;
+    display: flex;
+}
+.electionTrackerDiv{
     height: 40px;
-    background-color: pink;
-    margin: 10px;
-    display: flex;
-}
-.submarine-container-vertical{
     width: 40px;
-    height: 120px;
-    background-color: pink;
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    border: 2px solid black;
 }
-.cruiser-container{
-    width: 120px;
-    height: 40px;
-    background-color: purple;
-    margin: 10px;
-    display: flex;
-}
-.cruiser-container-vertical{
-    width: 40px;
-    height: 120px;
-    background-color: purple;
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.battleship-container{
-    width: 160px;
-    height: 40px;
-    background-color: aqua;
-    margin: 10px;
-    display: flex;
-}
-.battleship-container-vertical{
-    width: 40px;
-    height: 160px;
-    background-color: aqua;
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.carrier-container{
-    width: 200px;
-    height: 40px;
-    background-color: green;
-    margin: 10px;
-    display: flex;
-}
-.carrier-container-vertical{
-    width: 40px;
-    height: 200px;
-    background-color: green;
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.ship div{
-    width: 40px;
-    height: 40px;
-
-}
-.destroyer{
-    background-color: orange;
-}
-.submarine{
-    background-color: pink;
-}
-.cruiser{
-    background-color: purple;
-}
-.battleship{
-    background-color: aqua;
-}
-.carrier{
-    background-color: green;
-}
-.boom{
+.eTrackerRed{
     background-color: red;
 }
-.miss{
-    background-color: black;
+
+#gameAnnouncements{
+    width: 400px;
+    height: 100px;
+    background-color: #F4EECA;
+    display: flex;
+    /* justify-content: flex-end; */
+    font-weight: bold;
 }
-.connected, .ready{
-    font-weight: normal;
+#gameAnnouncementsTitle{
+    color:black;
+    width: 150px;
+    height: 20px;
+    background-color: #F4EECA;
+    padding:0;
+    margin:0;
+
 }
-.connected span{
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    background: red;
-}
-.ready span{
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    background: red;
+#playerCard{
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 90px;
 }
 
-span.green{
-    background: green;
+#playerSelfInfo{
+    display: flex;
+    background-color: #F4EECA;
+    gap: 10px;
+    width: 400px;
+    height: 100px;
+}
+#playerSelfInfoTitle{
+    color:black;
+    width: 150px;
+    height: 20px;
+    background-color: #F4EECA;
+    padding:0;
+    margin:0;
+}
+#playerNameInBoard{
+    font-weight: bold;
+    padding:0;
+    margin:0;
+}
+
+#gameOptions{
+    margin-top: 20px;;
+}
+#playerSelfInfoPlusTitle{
+    margin-top: 20px;
+    padding: 0;
+}
+#startAndReady{
+    width: 400px;
+    height: 100px;
+    background-color: #ebcf34
+}
+.superFascistPlayer{
+    width: 380px;
+    background-color: orange;
+    border: 2px solid black;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom: 0;
+}
+
+.fascistPlayer{
+    width: 380px;
+    background-color: orange;
+    border: 2px solid black;
+    padding:10px;
+    margin:0;
+}
+
+#userInfo{
+    display: flex;
+}
+
+#gameOptions{
+    width: 500px;
+    height: 1000px;
+}
+#playersTurn{
+    background-color: #F4EECA;
+    width: 400px;
+    height: 60px;
 }
